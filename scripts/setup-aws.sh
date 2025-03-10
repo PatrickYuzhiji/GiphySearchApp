@@ -24,7 +24,8 @@ export PATH="${AWS_HOME:-}:$PATH"
 
 if [ "$AWS_ACCESS_KEY_ID" == "" ] || [ "$AWS_SECRET_ACCESS_KEY" == "" ]; then
   # These can be used if master and prod are in different accounts or the IAM roles have different access
-  if [ "$BITBUCKET_BRANCH" == "prod" ]; then
+  
+  if [ "${BITBUCKET_BRANCH:-}" == "prod" ]; then
     export AWS_ACCESS_KEY_ID="${PROD_AWS_ACCOUNT_ACCESS_KEY_ID}"
     export AWS_SECRET_ACCESS_KEY="${PROD_AWS_ACCOUNT_SECRET_ACCESS_KEY}"
   else
