@@ -23,10 +23,10 @@ function App() {
       setIsLoading(true);
       try {
         if (term.trim() === '') {
-          const trendingGifs = await getTrendingGifs(16, page * 16);
+          const trendingGifs = await getTrendingGifs(8, page * 8);
           setGifList(trendingGifs);
         } else {
-          const searchResults = await searchGifs(term, 16, page * 16);
+          const searchResults = await searchGifs(term, 8, page * 8);
           setGifList(searchResults);
         }
       } catch (error) {
