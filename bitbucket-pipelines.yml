@@ -1,0 +1,38 @@
+image: atlassian/default-image:3
+
+pipelines:
+  branches:
+    '{main,prod}':
+      - step:
+          name: Deploy
+          size: 2x
+          script:
+            - touch ~/.bash_profile
+            - . ./scripts/setup-npm.sh
+            - . ./scripts/setup-aws.sh
+            - npm install
+            - npm run build
+            - ./scripts/deploy.sh
+          caches:
+            - node
+  default:
+    - step:
+        name: Build
+        size: 2x
+        script:
+          - touch ~/.bash_profile
+          - . ./scripts/setup-npm.sh
+          - npm install
+          - npm run build
+        caches:
+          - node
+    - step:
+        name: Lint
+        size: 2x
+        script:
+          - touch ~/.bash_profile
+          - . ./scripts/setup-npm.sh
+          - npm install
+          - npm run lint
+        caches:
+          - node

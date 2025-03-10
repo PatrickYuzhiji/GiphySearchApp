@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "stylelint-config-rational-order",
+    "stylelint-config-css-modules"
+  ],
+  "plugins": ["stylelint-order"],
+  "configBaseDir": "./",
+  "rules": {
+    "order/properties-alphabetical-order": null,
+    "max-nesting-depth": null,
+    "selector-no-qualifying-type": null,
+    "selector-class-pattern": "(^[a-z]+([A-Z]|-)+\\w+$)+|(^([a-z]|-)+\\w+$)",
+    "selector-max-compound-selectors": 8,
+    "at-rule-no-unknown": null
+  }
+}
