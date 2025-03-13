@@ -3,10 +3,10 @@ import { Card, Button } from 'react-bootstrap';
 import React from 'react';
 
 interface GifItemProps {
-  gif: any; // Consider defining a more specific type if available
+  gif: any;
 }
 
-const GifItem: React.FC<GifItemProps> = ({ gif }) => {
+const GifItem = ({ gif }: GifItemProps) => {
   const handleCopy = () => {
     if (gif) {
       navigator.clipboard.writeText(gif.url);

@@ -3,7 +3,7 @@ import { Form, FormControl, Button, Row, Col } from 'react-bootstrap';
 import TermContext from '../contexts/TermContext';
 import PageContext from '../contexts/PageContext';
 
-function SearchBar() {
+const SearchBar = () => {
   const [, setTerm] = useContext(TermContext);
   const [, setPage] = useContext(PageContext);
   // local state to store typed input
@@ -22,7 +22,6 @@ function SearchBar() {
           <FormControl
             type="search"
             placeholder="Search GIFs..."
-            className="me-2"
             value={tempTerm}
             onChange={(e) => setTempTerm(e.target.value)}
           />
@@ -35,6 +34,6 @@ function SearchBar() {
       </Row>
     </Form>
   );
-}
+};
 
 export default SearchBar;

@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import GifItem from './GifItem';
 import GifListContext from '../contexts/GifListContext';
 
-function GifGrid() {
+const GifGrid = (): React.JSX.Element => {
   const [GifList, setGifList] = useContext(GifListContext);
 
   return (
@@ -20,6 +20,6 @@ function GifGrid() {
       </Container>
     </div>
   );
-}
+};
 
 export default GifGrid;
